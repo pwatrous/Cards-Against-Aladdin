@@ -1,3 +1,4 @@
 .card-content {
 	background-image: url("images/card.jpg");
+	background-size: 100%;
 }
