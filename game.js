@@ -46,7 +46,11 @@ var game = {
           // populate player hand on screen
           $('.player.row').find('.card-title').each(function() {
             if(i < data.playerhand.length) {
-              $(this).text(data.playerhand[i]);
+              var $this = $(this);
+              $this.text(data.playerhand[i].ticker);
+              $this.siblings('.stock-name').text(data.playerhand[i].name);
+              $this.siblings('.stock-industry').text(data.playerhand[i].industry);
+              $this.siblings('.stock-price').text(data.playerhand[i].price);
               i++;
             }
           });
