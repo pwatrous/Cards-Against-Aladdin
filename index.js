@@ -48,29 +48,27 @@ wss.on('connection', function(ws) {
                 //roll a quarter
                 let quarter = aladdin.defineQuarter(Math.floor(Math.random() * 40)); //0-39 rolled for quarter
                 let deck = aladdin.getDeck(quarter); 
+                bot.init(deck, quarter);
+                player.init(dick, quarter);
                 //broadcast rolled quarter
-
-                //'bot' object data held client side
-                //'player' object data held client side as well
+                wss.broadcast({
+                    quarter : quarter,
+                    playerhand : player.getPlayerHand();
+                });
+                break;
             case 0:
             case 1:
             case 2:
             case 3:
                 //do a regular round
+                
             case 4:
                 //wildcard round    
 
         }
- 
 
-
-
-
-
-
-
-        wss.broadcast(data)
-        console.log('data broadcast to clients')
+        // wss.broadcast(data)
+        //console.log('data broadcast to clients')
     })
 
     ws.on('close', function() {
