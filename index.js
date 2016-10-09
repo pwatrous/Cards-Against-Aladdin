@@ -33,8 +33,7 @@ wss.on('connection', function(ws) {
         /*
         {
             round: int,
-            ticker: string,
-            shares: int,
+            played : [int, int, int] //index, cash, stocks
         }
         */
 
@@ -42,14 +41,15 @@ wss.on('connection', function(ws) {
         //round[0-3] -> client sends Ticker+Stock, server replies send new card, and bot card
         //round 4: Client sends ticker+stock, server replies with wild card, client calculates leftover stock for wild + 1% on savings, sends final tickers+weight
         //winner stage // server calculates $ for server, $ client, send tickers, weights for bot
+        let deck;
         switch(data.round){
             case -1: //reset
                 //init
                 //roll a quarter
                 let quarter = aladdin.defineQuarter(Math.floor(Math.random() * 40)); //0-39 rolled for quarter
-                let deck = aladdin.getDeck(quarter); 
+                deck = aladdin.getDeck(quarter); 
                 bot.init(deck, quarter);
-                player.init(dick, quarter);
+                player.init(deck, quarter);
                 //broadcast rolled quarter
                 wss.broadcast({
                     quarter : quarter,
@@ -61,9 +61,26 @@ wss.on('connection', function(ws) {
             case 2:
             case 3:
                 //do a regular round
-                
+                player.playcard(data.played[0], data.played[1], data.played[2]);
+                wss.broadcast({
+                    cash : player.getPlayerCash();
+                    hand : player.getPlayerHand();
+                });
+                break;
             case 4:
-                //wildcard round    
+                player.playcard(data.played[0], data.played[1], data.played[2]);
+                //wildcard round
+                let wc = deck[Math.floor(Math.random() * deck.length)];
+                player.playWC(wc);
+
+                wss.broadcast({
+                    cash: player.getPlayerCash();
+                    wildcard : wc;
+                    botCards = bot.getPlayed();
+                    botFinal : bot.getFinalYield();
+                    playerFinal : player.getFinalYield();
+                });
+                break;
 
         }
 

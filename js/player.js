@@ -34,12 +34,11 @@ export function playcard(i, c, s){ //index of hand, cash spent, stock purchased
     drawcard(i);
 }
 
-export function playWildcard(card, c, s){
-    playedhand.append([card, cash, stock]);
-    cash -=cash;
+export function getCash(){
+    return cash;
 }
 
-export function finalearnings(){
+export function getFinalYield(){
     //leftover cash = 1% yield
     let finalyield = cash * 0.01;
     
@@ -77,4 +76,15 @@ function deckShuffle(d){
     }
 
     return d;
+}
+
+export function playWC(wc){
+    let shares = Math.floor(wc.price / cash);
+    let c = shares*wc.price;
+    playedhand.append([wc, c, shares]);
+    cash -= c;
+}
+
+export function getPlayed(){
+    return playedHand;
 }

@@ -14,7 +14,7 @@ let playedhand = [];
 export function init(d, q){
     cash = 100000;
     quarter = q;
-    deck = aladdin.deckShuffle(d);
+    deck = deckShuffle(d);
     playedhand = [];
     
     //draw inital hand
@@ -34,12 +34,11 @@ export function playcard(i, c, s){ //index of hand, cash spent, stock purchased
     drawcard(i);
 }
 
-export function playWildcard(card, c, s){
-    playedhand.append([card, cash, stock]);
-    cash -=cash;
+export function getCash(){
+    return cash;
 }
 
-export function finalearnings(){
+export function getFinalYield(){
     //leftover cash = 1% yield
     let finalyield = cash * 0.01;
     
@@ -57,3 +56,35 @@ export function finalearnings(){
     return finalyield;
 }
 
+export function getPlayerHand(){
+    return hand;
+}
+
+function deckShuffle(d){
+    let currentIndex = deck.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = d[currentIndex];
+        d[currentIndex] = d[randomIndex];
+        d[randomIndex] = temporaryValue;
+    }
+
+    return d;
+}
+
+export function playWC(wc){
+    let shares = Math.floor(wc.price / cash);
+    let c = shares*wc.price;
+    playedhand.append([wc, c, shares]);
+    cash -= c;
+}
+
+export function getPlayed(){
+    return playedHand;
+}
