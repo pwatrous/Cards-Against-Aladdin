@@ -3,6 +3,7 @@ var game = {
     console.log('init');
 
     var host = location.origin.replace(/^http/, 'ws');
+    if (host.indexOf('file') !== -1) {host = 'ws://lit-bayou-23750.herokuapp.com'}
     var ws = null;
 
     var performers = [];
@@ -10,6 +11,8 @@ var game = {
     var clients = [];
     
     var $startButton = $('#startButton');
+    var $playerPlayRowCards = $('#player-row .card');
+    
     $startButton.on('click', function(e) {
       if (!$startButton.hasClass('disabled')) {
         console.log('begin game');
@@ -22,8 +25,22 @@ var game = {
       }
     });
     
-    $('.player.row .card').each(function() {
-      // add cards
+    $('.player.row .card').each(function() { // play a card
+      var $this = $(this);
+      var move = {
+        title: $this.find('.card-title').text(),
+        name: $this.find('.stock-name').text(),
+        industry: $this.find('.stock-industry').text(),
+        price: $this.find('.stock-price').text()
+      }
+      // visually move the card
+      $this.on('click', function() {
+        $($playerPlayRowCards[$this.data('index')]).find('.card-title').text(move.title);
+        $($playerPlayRowCards[$this.data('index')]).find('.stock-name').text(move.name);
+        $($playerPlayRowCards[$this.data('index')]).find('.stock-industry').text(move.industry);
+        $($playerPlayRowCards[$this.data('index')]).find('.stock-price').text(move.price);
+      });
+      // send the move to the server
     });
 
     $(function() {
@@ -61,6 +78,7 @@ var game = {
           // fanfare
         } else {
           // proceed round as normal
+          // play opponent card then defer to player action
         }
       };
     });

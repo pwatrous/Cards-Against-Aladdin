@@ -25,3 +25,26 @@ body {
   position: absolute;
   top: 0;
 }
+
+.stock-name {
+  position: absolute;
+  top: 32px;
+}
+
+.stock-industry {
+  position: absolute;
+  top: 110px;
+}
+
+.stock-price {
+  position: absolute;
+  top: 133px;
+}
+
+.play.row .stock-industry {
+  top: 94px;
+}
+
+.play.row .stock-price {
+  top: 112px;
+}
