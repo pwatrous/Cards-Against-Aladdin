@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/pwatrous/Cards-With-Aladdin-/issues"
   },
-  "homepage": "https://github.com/pwatrous/Cards-With-Aladdin-#readme"
+  "homepage": "https://github.com/pwatrous/Cards-With-Aladdin-#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "ws": "^1.1.1"
+  }
 }
