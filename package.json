@@ -1,0 +1,23 @@
+{
+  "name": "cards-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwatrous/Cards-With-Aladdin-.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pwatrous/Cards-With-Aladdin-/issues"
+  },
+  "homepage": "https://github.com/pwatrous/Cards-With-Aladdin-#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "ws": "^1.1.1"
+  }
+}
