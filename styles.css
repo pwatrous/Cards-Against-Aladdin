@@ -12,3 +12,7 @@ body {
   margin-top: 48px;
   text-align: center;
 }
+
+.opponent.row {
+  margin-top: -68px;
+}
