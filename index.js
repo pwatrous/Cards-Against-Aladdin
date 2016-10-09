@@ -1,32 +1,74 @@
-var WebSocketServer = require('ws').Server
-var http = require('http')
-var express = require('express')
-var app = express()
-var port = process.env.PORT || 5000
+const WebSocketServer = require('ws').Server
+const http = require('http')
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 5000
 
 app.use(express.static(__dirname + '/'))
 
-var server = http.createServer(app)
+const server = http.createServer(app)
 server.listen(port)
 
 console.log('http server listening on %d', port)
 
-var webSockets = []
-var viewers = []
-var client = null
+let webSockets = []
+let viewers = []
+let client = null
 
-var wss = new WebSocketServer({server: server})
+let wss = new WebSocketServer({server: server})
 console.log('websocket server created')
+////////////////////////////////////////////////////////////////////////////////////////
+const bot = require('js/bot');
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////
 wss.on('connection', function(ws) {
     console.log('websocket connection open')
 
     ws.on('message', function(data, flags) {
         console.log(data)
-        var content = JSON.parse(data)
+        let content = JSON.parse(data)
         // Our only message is player card choice
-        wss.broadcast(data)
-        console.log('data broadcast to clients')
+        /*
+        {
+            round: int,
+            ticker: string,
+            shares: int,
+        }
+        */
+
+        //reset / set to init state, server sends init 4 cards
+        //round[0-3] -> client sends Ticker+Stock, server replies send new card, and bot card
+        //round 4: Client sends ticker+stock, server replies with wild card, client calculates leftover stock for wild + 1% on savings, sends final tickers+weight
+        //winner stage // server calculates $ for server, $ client, send tickers, weights for bot
+        switch(data.round){
+            case -1: //reset
+                //init
+                //roll a quarter
+                let quarter = aladdin.defineQuarter(Math.floor(Math.random() * 40)); //0-39 rolled for quarter
+                let deck = aladdin.getDeck(quarter); 
+                bot.init(deck, quarter);
+                player.init(dick, quarter);
+                //broadcast rolled quarter
+                wss.broadcast({
+                    quarter : quarter,
+                    playerhand : player.getPlayerHand();
+                });
+                break;
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                //do a regular round
+                
+            case 4:
+                //wildcard round    
+
+        }
+
+        // wss.broadcast(data)
+        //console.log('data broadcast to clients')
     })
 
     ws.on('close', function() {
