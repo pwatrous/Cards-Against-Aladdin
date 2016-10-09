@@ -35,10 +35,23 @@ var game = {
       }
       // visually move the card
       $this.on('click', function() {
-        $($playerPlayRowCards[$this.data('index')]).find('.card-title').text(move.title);
-        $($playerPlayRowCards[$this.data('index')]).find('.stock-name').text(move.name);
-        $($playerPlayRowCards[$this.data('index')]).find('.stock-industry').text(move.industry);
-        $($playerPlayRowCards[$this.data('index')]).find('.stock-price').text(move.price);
+        var index = 0;
+        var displayed = false;
+        for (var i = 0; i < $playerPlayRowCards.length; i++) {
+          var currentRiverCardTitle = $($playerPlayRowCards[i]).find('.card-title').text();
+          if(!currentRiverCardTitle && displayed === false) {
+            $($playerPlayRowCards[i]).find('.card-title').text(move.title);
+            $($playerPlayRowCards[i]).find('.stock-name').text(move.name);
+            $($playerPlayRowCards[i]).find('.stock-industry').text(move.industry);
+            $($playerPlayRowCards[i]).find('.stock-price').text(move.price);
+            $this.find('.card-title').text('');
+            $this.find('.stock-name').text('');
+            $this.find('.stock-industry').text('');
+            $this.find('.stock-price').text('');
+            $(this).off();
+            displayed = true;
+          }
+        }
       });
       // send the move to the server
     });
