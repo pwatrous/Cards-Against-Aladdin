@@ -23,7 +23,7 @@ var game = {
     });
     
     $('.player.row .card').each(function() {
-      
+      // add cards
     });
 
     $(function() {
