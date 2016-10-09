@@ -1,1 +1,59 @@
-AAPL,Apple Inc.GE,General Electric Co.PG,Procter & Gamble Co.PFE,Pfizer Inc.VZ,Verizon CommunicationsMRK,Merck & Co., Inc.BAC,Bank of America Corp.C,Citigroup Inc.IBM,International Business MachinesCMCSA,Comcast Corp.PEP,PepsiCo Inc.CSCO,Cisco Systems Inc.ORCL,Oracle Corp.WMT,Wal-Mart Stores, Inc.AMGN,Amgen Inc.MMM,3M CompanyUPS,United Parcel Service, Inc.EBAY,eBay Inc.HPQ,Hewlett-Packard Co.TXN,Texas Instruments Inc.ACN,Accenture PlcTGT,Target Corp.BK,Bank of New York Mellon Corp.COF,Capital One Financial Corp.VLO,Valero Energy Corp.CI,CIGNA Corp.GLW,Corning Inc.MPC,Marathon Petroleum Corp.AEP,American Electric PowerVIAB,Viacom Inc.ABC,AmerisourceBergen Corp.BRCM,Broadcom Corp.WM,Waste Management, Inc.IP,International Paper Co.DLPH,Delphi Automotive PLCPPL,PPL CorporationM,Macy's Inc.WDC,Western Digital Corp.NOV,National Oilwell VarcoSTX,Seagate TechnologyPAYX,Paychex Inc.SYMC,Symantec Corp.FITB,Fifth Third BancorpNUE,Nucor Corp.CAG,ConAgra Inc.XRX,Xerox Corp.RF,Regions Financial Corp.LRCX,Lam Research Corp.NTAP,NetApp Inc.DGX,Quest Diagnostics Inc.LLTC,Linear Technology Corp.WYN,Wyndham Worldwide Corp.EMN,Eastman Chemical Co.CTXS,Citrix Systems Inc.CSC,Computer Sciences Corp.CAM,Cameron International Corp.FLR,Fluor Corp.JNPR,Juniper Networks Inc.FFIV,F5 Networks Inc.
+ticker:AAPL,
+ticker:GE,
+ticker:PG,
+ticker:PFE,
+ticker:VZ,
+ticker:MRK,
+ticker:BAC,
+ticker:C,
+ticker:IBM,
+ticker:CMCSA,
+ticker:PEP,
+ticker:CSCO,
+ticker:ORCL,
+ticker:WMT,
+ticker:AMGN,
+ticker:MMM,
+ticker:UPS,
+ticker:EBAY,
+ticker:HPQ,
+ticker:TXN,
+ticker:ACN,
+ticker:TGT,
+ticker:BK,
+ticker:COF,
+ticker:VLO,
+ticker:CI,
+ticker:GLW,
+ticker:MPC,
+ticker:AEP,
+ticker:VIAB,
+ticker:ABC,
+ticker:BRCM,
+ticker:WM,
+ticker:IP,
+ticker:DLPH,
+ticker:PPL,
+ticker:M,
+ticker:WDC,
+ticker:NOV,
+ticker:STX,
+ticker:PAYX,
+ticker:SYMC,
+ticker:FITB,
+ticker:NUE,
+ticker:CAG,
+ticker:XRX,
+ticker:RF,
+ticker:LRCX,
+ticker:NTAP,
+ticker:DGX,
+ticker:LLTC,
+ticker:WYN,
+ticker:EMN,
+ticker:CTXS,
+ticker:CSC,
+ticker:CAM,
+ticker:FLR,
+ticker:JNPR,
+ticker:FFIV
