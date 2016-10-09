@@ -13,7 +13,6 @@ console.log('http server listening on %d', port)
 
 var webSockets = []
 var viewers = []
-var player = null
 var client = null
 
 var wss = new WebSocketServer({server: server})
@@ -25,26 +24,7 @@ wss.on('connection', function(ws) {
     ws.on('message', function(data, flags) {
         console.log(data)
         var content = JSON.parse(data)
-        id = content.id || content.client
-
-        if (content.signal === 'start') {
-            console.log(id)
-            if (player !== null) {
-                player = 
-            } else if (id.includes('web')) {
-                viewers.push(id)
-            }
-            var pool = {
-                signal: 'clients',
-                viewers: viewers,
-                performers: performers
-            }
-            // send the current list of viewers and performers
-            ws.send(JSON.stringify(pool))
-        } else if (content.signal === 'chat') {
-            // log chat
-        }
-
+        // Our only message is player card choice
         wss.broadcast(data)
         console.log('data broadcast to clients')
     })
@@ -54,7 +34,7 @@ wss.on('connection', function(ws) {
     })
 
     ws.on('error', function(err) {
-        console.log('shit ' + err)
+        console.log('shit, ' + err)
     })
 
     webSockets.push(ws)
@@ -67,11 +47,3 @@ wss.broadcast = function(data) {
     for (var i in this.clients)
         this.clients[i].send(data)
 }
-
-/*
-wss.broadcastToStage = function(data) {
-    for (var i in this.clients) {
-        if(data.client.includes(''))
-        this.clients[i].send(data)
-    }
-}*/
