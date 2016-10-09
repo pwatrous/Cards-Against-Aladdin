@@ -1,1 +1,50 @@
-ticker:AAPL,ticker:GE,ticker:PG,ticker:PFE,ticker:VZ,ticker:MRK,ticker:BAC,ticker:C,ticker:IBM,ticker:CMCSA,ticker:PEP,ticker:CSCO,ticker:ORCL,ticker:WMT,ticker:AMGN,ticker:MMM,ticker:UPS,ticker:EBAY,ticker:HPQ, ticker:TXN,ticker:ACN,ticker:TGT,ticker:BK,ticker:COF,ticker:VLO,ticker:CI,ticker:GLW,ticker:MPC,ticker:AEP,ticker:VIAB,ticker:ABC,ticker:BRCM,ticker:WM,ticker:IP,ticker:DLPH,ticker:PPL,ticker:M,ticker:WDC,ticker:NOV,ticker:STX,ticker:PAYX,ticker:SYMC,ticker:FITB,ticker:NUE,ticker:CAG,ticker:XRX,ticker:RF,ticker:LRCX,ticker:NTAP,ticker:DGX,ticker:LLTC
+ticker:VOO,Vanguard S&P 500 Index Fund,Exchange-Traded Fund
+ticker:SPY,SPDR S&P 500 ETF Trust,Exchange-Traded Fund
+ticker:VTI,Vanguard Total Stock Market Index Fund,Exchange-Traded Fund
+ticker:VWO,Vanguard FTSE Emerging Markets ETF,Exchange-Traded Fund
+ticker:IVV,iShares Core S&P 500 ETF,Exchange-Traded Fund
+ticker:VEA,Vanguard FTSE Developed Markets ETF,Exchange-Traded Fund
+ticker:EFA,iShares MSCI EAFE ETF,Exchange-Traded Fund
+ticker:BND,Vanguard Total Bond Market Index Fund,Exchange-Traded Fund
+ticker:HEDJ,WisdomTree Europe Hedged Equity Fund,Exchange-Traded Fund
+ticker:AGG,iShares Core U.S. Aggregate Bond ETF,Exchange-Traded Fund
+ticker:XL,XL Group Ltd,Financial Services
+ticker:CB,Chubb Limited,Financial Services
+ticker:GS,Goldman Sachs Group Inc,Financial Services
+ticker:PGR,Progressive Corp,Financial Services
+ticker:CINC,Cincinnati Financial Corp,Financial Services
+ticker:MET,Metlife Inc,Financial Services
+ticker:BLK,BlackRock Inc,Financial Services
+ticker:HBAN,Huntington Bancshares,Financial Services
+ticker:RF,Regions Financial Corp,Financial Services
+ticker:COF,Capital One Financial,Financial Services
+ticker:RRC,Range Resources Corp,Energy
+ticker:TFI,FMC Technologies Inc,Energy
+ticker:BHI,Baker Hughes Inc,Energy
+ticker:RIG,Transocean Ltd,Energy
+ticker:PXD,Pioneer Natural Resources,Energy
+ticker:APC,Anadarko Petroleum Corp,Energy
+ticker:OKE,ONEOK Inc,Energy
+ticker:XEC,Cimarex Energy Co,Energy
+ticker:COP,ConocoPhillips,Energy
+ticker:EQT,EQT Corporation,Energy
+ticker:GPS,Gap Inc,Consumer Discretionary
+ticker:KSS,Kohl's Corp,Consumer Discretionary
+ticker:URBN,Urban Outfitters,Consumer Discretionary
+ticker:BBY,Best Buy Co Inc,Consumer Discretionary
+ticker:PVH,PVH Gorp,Consumer Discretionary
+ticker:BWA,Borgwarner Inc,Consumer Discretionary
+ticker:TIF,Tiffany & Co,Consumer Discretionary
+ticker:YUM,Yum! Brands Inc,Consumer Discretionary
+ticker:GRMN,Garmin Ltd,Consumer Discretionary
+ticker:LB,L Brands Inc
+ticker:ALXN,Alexion Pharmaceuticals Inc,Health Care
+ticker:CBE,Cooper Industries Inc,Health Care
+ticker:HOLX,Hologic Inc,Health Care
+ticker:LH,Lab Corp of America Holdings,Health Care
+ticker:XRAY,Dentsply Sirona Inc,Health Care
+ticker:JNJ,Johnson & Johnson,Health Care
+ticker:ZTS,Zoetis Inc,Health Care
+ticker:REGN,Regeneron Pharmaceuticals Inc,Health Care
+ticker:AMGN,Amgen Inc,Health Care
+ticker:BCR,Bard C.R. Inc,Health Care
