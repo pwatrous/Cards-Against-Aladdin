@@ -2,7 +2,7 @@ body {
 	background-image: url("images/table.jpg");
 }
 
-.card-content {
+.cardback {
 	background-image: url("images/card.jpg");
 	background-size: 100%;
 }
