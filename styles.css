@@ -1,8 +1,18 @@
 body {
 	background-image: url("images/table.jpg");
+  padding-left: 158px;
 }
 
 .cardback {
 	background-image: url("images/card.jpg");
 	background-size: 100%;
+}
+
+.control {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.opponent.row {
+  margin-top: -68px;
 }
