@@ -3,10 +3,6 @@ var game = {
     console.log('init');
 
     var host = location.origin.replace(/^http/, 'ws');
-    // local testing
-    if (host.indexOf('file') !== -1) {
-      host = 'ws://lit-bayou-23750.herokuapp.com';
-    }
     var ws = null;
 
     var performers = [];
@@ -15,7 +11,7 @@ var game = {
     
     var $startButton = $('#startButton');
     $startButton.on('click', function(e) {
-      if(!$startButton.hasClass('disabled')) {
+      if (!$startButton.hasClass('disabled')) {
         console.log('begin game');
         // signal the server to begin a new game
         var startSignal = {
@@ -24,6 +20,10 @@ var game = {
         ws.send(JSON.stringify(startSignal));
         $startButton.addClass('disabled');
       }
+    });
+    
+    $('.player.row .card').each(function() {
+      
     });
 
     $(function() {
@@ -43,10 +43,10 @@ var game = {
         var data = JSON.parse(event.data);
         var i = 0;
         // if we're being sent the quarter then it's the start of a new game
-        if(typeof data.quarter !== 'undefined') {
+        if (typeof data.quarter !== 'undefined') {
           // populate player hand on screen
           $('.player.row').find('.card-title').each(function() {
-            if(i < data.playerhand.length) {
+            if (i < data.playerhand.length) {
               var $this = $(this);
               $this.text(data.playerhand[i].ticker);
               $this.siblings('.stock-name').text(data.playerhand[i].name);
@@ -55,6 +55,12 @@ var game = {
               i++;
             }
           });
+        } else if (typeof data.wildcard !== 'undefined') {
+          // if wildcard is sent it's the end of the game
+          // show wildcards and totals, reveal opponent's hand
+          // fanfare
+        } else {
+          // proceed round as normal
         }
       };
     });
