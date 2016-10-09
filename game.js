@@ -13,7 +13,8 @@ var game = {
     var viewers = [];
     var clients = [];
     
-    var $startButton = $('#startButton').on('click', function(e) {
+    var $startButton = $('#startButton');
+    $startButton.on('click', function(e) {
       if(!$startButton.hasClass('disabled')) {
         console.log('begin game');
         // signal the server to begin a new game
