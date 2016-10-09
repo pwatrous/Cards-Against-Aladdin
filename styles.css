@@ -16,3 +16,12 @@ body {
 .opponent.row {
   margin-top: -68px;
 }
+
+.card-content {
+  position: relative;
+}
+
+.stock-card-title {
+  position: absolute;
+  top: 0;
+}

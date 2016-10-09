@@ -40,7 +40,17 @@ var game = {
       ws.onmessage = function(event) {
         console.log(event.data);
         var data = JSON.parse(event.data);
-        
+        var i = 0;
+        // if we're being sent the quarter then it's the start of a new game
+        if(typeof data.quarter !== 'undefined') {
+          // populate player hand on screen
+          $('.player.row').find('.card-title').each(function() {
+            if(i < data.playerhand.length) {
+              $(this).text(data.playerhand[i]);
+              i++;
+            }
+          });
+        }
       };
     });
   }
